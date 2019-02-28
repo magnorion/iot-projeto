@@ -2,7 +2,8 @@ module.exports = function (app) {
   var five = require("johnny-five"),
   board, button;
 
-  const mailer = app.helper.mailer;
+  const mailer = app.helper.mailer,
+  mqtt = app.helper.mqtt;
 
  board = new five.Board({'port': 'COM3'});
 
@@ -16,6 +17,7 @@ module.exports = function (app) {
 
     // "down" the button is pressed
     button.on("down", function() {
+      mqtt.publish('hello');
       // mailer.main();
     });
 
