@@ -5,7 +5,7 @@ module.exports = function (app) {
   client.on('connect', function () {
     client.subscribe('presence', function (err) {
       if (!err) {
-        client.publish('presence', 'Hello mqtt')
+        client.publish('presence', 'App running...')
       }
     })
   })

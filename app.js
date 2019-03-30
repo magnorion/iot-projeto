@@ -1,6 +1,5 @@
 const consign = require('consign'),
-express = require('express'),
-mqtt = require('mqtt');
+express = require('express');
 
 const app = express();
 
